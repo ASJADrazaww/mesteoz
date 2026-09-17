@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07080d">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="mesteoz connects ambitious teams with video editors who make content move.">
+  <title>mesteoz | The video editing network</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="apple-touch-icon" href="/logo.svg">
+  <script>
+    // Applies the saved (or system) theme before first paint so there is no flash of the wrong theme.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('ec-theme'); } catch (error) { stored = null; }
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (prefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#f4f7fc' : '#07080d');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+  <div class="noise"></div>
+  <div id="launch-splash" class="launch-splash" role="status" aria-live="polite" aria-label="Loading mesteoz">
+    <div class="launch-splash-inner">
+      <span class="launch-splash-word">Connect. Create. Grow.</span>
+      <span class="launch-splash-line" aria-hidden="true"></span>
+    </div>
+  </div>
+  <header class="topbar">
+    <!-- Brand assets: /logo.svg is the mesteoz mark, /logo-lockup.svg is the full logo with SINCE 2026. Swap those files (or point src at /logo.png) to change the logo. -->
+    <a class="brand" href="#home" aria-label="mesteoz home"><img class="brand-logo" src="/logo.svg" alt="mesteoz logo" width="41" height="34"><span class="brand-word">mesteoz</span></a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="#editors">Find editors</a>
+      <a href="#projects">Find projects</a>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav-actions"><button class="text-button" data-action="login">Log in</button><button class="button button-small" data-action="signup">Get started <span>↗</span></button></div>
+    <button class="theme-toggle" type="button" data-action="toggle-theme" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.7v2.1M12 19.2v2.1M2.7 12h2.1M19.2 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.4A8.5 8.5 0 1 1 9.6 3.5a6.9 6.9 0 0 0 10.9 10.9Z"/></svg>
+    </button>
+    <button class="menu-button" aria-label="Open menu">☰</button>
+  </header>
+
+  <main id="app">
+    <section id="home" class="hero page-section">
+      <div class="hero-copy reveal">
+        <div class="kicker"><span class="pulse-dot"></span> THE EDITOR NETWORK FOR WHAT'S NEXT</div>
+        <h1>Connect.<br><em>Create. Grow.</em></h1>
+        <p class="hero-lede">Find the right video editor for every story, deadline, and scroll. mesteoz makes great content a team sport.</p>
+        <div class="hero-actions"><button class="button" data-scroll="editors">Find an editor <span>↗</span></button><button class="button button-ghost" data-action="editor">I'm an editor <span>→</span></button></div>
+        <div class="hero-note"><div class="avatar-stack" id="network-stack"><span class="avatar avatar-more">0</span></div><span id="network-note">Live network now · every editor profile and every brief belongs to a real signed-up account</span></div>
+      </div>
+      <div class="hero-visual reveal delay-1" aria-label="Editor marketplace preview">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-card card-match"><span class="tiny-label">EDITORS ON NETWORK</span><strong id="stat-editors">0</strong><span>Every profile is a real account</span></div>
+        <div class="editor-preview main-preview"><div class="preview-top"><span class="status-pill"><span class="pulse-dot"></span> AUTO-CONNECT ON</span><button class="icon-button">♡</button></div><div class="match-flow"><div class="match-node"><span class="tiny-label">CLIENT BRIEF</span><strong>Skills, budget, deadline</strong></div><div class="match-link">→</div><div class="match-node"><span class="tiny-label">EDITOR MATCH</span><strong>Real profiles only</strong></div><div class="match-link">→</div><div class="match-node"><span class="tiny-label">CONTACT HANDOFF</span><strong>Phone + Instagram</strong></div></div><div class="preview-info"><div><h3>No demo profiles <span class="verified">✓</span></h3><p>Every editor below signed up with a phone number</p></div><span class="rating">LIVE</span></div><div class="tag-row"><span>Auto-connect</span><span>Phone</span><span>Instagram</span></div><div class="preview-bottom"><span>Matched in <strong>seconds</strong></span><button class="mini-button" data-action="signup">Get matched →</button></div></div>
+        <div class="floating-card card-project"><div class="project-thumb"><span>▶</span></div><div><span class="tiny-label">LIVE NETWORK</span><strong id="stat-projects">0 open briefs</strong><span id="stat-connections">0 connections</span></div></div>
+        <div class="floating-card card-spark"><span>✦</span><strong>your next<br>great edit</strong></div>
+      </div>
+    </section>
+
+    <section class="trust-band"><p>NO DEMO PROFILES · EVERY EDITOR AND BRIEF BELONGS TO A REAL SIGNED-UP ACCOUNT</p><div class="logo-row"><span>verified sign-ups</span><span>phone first</span><span>instagram linked</span><span>auto-matched</span><span>live tracking</span></div></section>
+
+    <section id="editors" class="page-section marketplace-section">
+      <div class="section-heading reveal"><div><div class="kicker">01 / DISCOVER YOUR CREW</div><h2>Talent that gets<br><em>the brief.</em></h2></div><p>Skip the endless scrolling. Search a network of editors who know the pace, platform, and feeling your content needs.</p></div>
+      <div class="toolbar reveal delay-1"><div class="search-field"><span>⌕</span><input id="editor-search" placeholder="Search editors, skills, software..." aria-label="Search editors"></div><div class="filter-chips"><button class="filter-chip active" data-category="">All editors</button><button class="filter-chip" data-category="Shorts">Short-form</button><button class="filter-chip" data-category="YouTube">YouTube</button><button class="filter-chip" data-category="Motion">Motion</button><button class="filter-chip" data-category="Podcast">Podcast</button></div><button class="filter-icon">☷</button></div>
+      <div id="editor-grid" class="editor-grid"></div><div class="center-action"><button class="button button-ghost" data-action="load-more">Explore all editors <span>↗</span></button></div>
+    </section>
+
+    <section id="how" class="process-section page-section"><div class="section-heading reveal"><div><div class="kicker">02 / THE SHORTCUT</div><h2>From raw footage<br>to <em>real momentum.</em></h2></div><p>Everything you need to find your person, start the work, and keep the good stuff coming.</p></div><div class="process-grid"><article class="process-step reveal"><span class="step-number">01</span><span class="step-icon">⌕</span><h3>Describe the vision</h3><p>Tell us what you're making, where it's going, and what good looks like.</p><a href="#projects">Post a project →</a></article><article class="process-step reveal delay-1"><span class="step-number">02</span><span class="step-icon">✦</span><h3>Meet your match</h3><p>Browse a curated shortlist of editors matched to your brief and working style.</p><a href="#editors">Browse talent →</a></article><article class="process-step reveal delay-2"><span class="step-number">03</span><span class="step-icon">↗</span><h3>Make something land</h3><p>Collaborate in one calm workspace, from first cut to final export.</p><a href="#dashboard">Open workspace →</a></article></div></section>
+
+    <section id="projects" class="projects-section page-section"><div class="section-heading reveal"><div><div class="kicker">03 / OPEN BRIEFS</div><h2>Good work is<br><em>already in motion.</em></h2></div><button class="button button-ghost" data-action="create-project">Post a project <span>＋</span></button></div><div id="project-list" class="project-list"></div></section>
+
+    <section id="dashboard" class="dashboard-section page-section"><div class="dashboard-shell reveal"><div class="dashboard-nav"><div class="dashboard-label">YOUR MESTEOZ</div><button class="dash-tab active" data-dashboard="editor">Editor dashboard</button><button class="dash-tab" data-dashboard="client">Client dashboard</button><div class="dashboard-nav-foot"><span class="avatar avatar-violet" id="dash-avatar">?</span><span><span id="dash-user-name">Not signed in</span><br><small id="dash-user-role">Sign in to track requests</small></span><span>⋮</span></div></div><div class="dashboard-main"><div class="dashboard-head"><div><div id="dashboard-eyebrow" class="kicker">YOUR WORKSPACE</div><h2 id="dashboard-title">Track every request</h2><p id="dashboard-subtitle">Sign in with your mobile number to see your live editor and client connections.</p></div><button class="button button-small" data-action="notifications">◎ <span id="notification-count">Updates</span></button></div><div id="metric-grid" class="metric-grid"></div><div class="dashboard-lower"><div class="chart-panel"><div class="panel-head"><div><span class="tiny-label">REQUEST TRACKER</span><strong id="tracker-count">0 requests</strong></div><span class="status-pill"><span class="pulse-dot"></span> LIVE</span></div><div id="tracker-list" class="tracker-list"><p class="muted-text">No requests to track yet. Post a brief or connect with an editor to start.</p></div></div><div class="completion-panel"><span class="tiny-label" id="completion-label">PROFILE STRENGTH</span><div class="completion-ring" id="completion-ring"><strong id="completion-value">0%</strong></div><p id="completion-note">Not signed in yet.<br><span>Add skills, software and a portfolio link to get better matches.</span></p><button class="text-link" data-action="signup">Complete profile →</button></div></div></div></div></section>
+
+    <section id="pricing" class="cta-section page-section"><div class="cta-orb"></div><div class="kicker">READY WHEN YOU ARE</div><h2>Your next chapter<br>starts with <em>one good edit.</em></h2><p>Join a network built for the people making what comes next.</p><div class="hero-actions"><button class="button" data-action="signup">Get started free <span>↗</span></button><button class="button button-ghost" data-action="login">Sign in <span>→</span></button></div></section>
+  </main>
+
+  <div id="modal" class="modal-backdrop" hidden><div class="modal" role="dialog" aria-modal="true"><button class="modal-close" data-action="close-modal">×</button><div id="modal-content"></div></div></div>
+  <div id="toast" class="toast" role="status"></div>
+  <footer><a class="brand" href="#home" aria-label="mesteoz — since 2026"><img class="brand-lockup" src="/logo-lockup.svg" alt="mesteoz logo — since 2026" width="121" height="72"></a><span>Find the right editor. Get more content. Grow faster.</span><span class="footer-copy">© 2026 mesteoz</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/zod@3.23.8/lib/index.umd.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js?v=2"></script>
+</body>
+</html>
